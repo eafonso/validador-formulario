@@ -1,25 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ValidadeCPF from './validates/ValidadeCPF';
+import ValidadeTelefone from './validates/ValidadeTelefone';
+import ValidadeUrl from './validates/ValidadeUrl';
+import ValidateString from './validates/ValidateString';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ValidadeTelefone id='testing' className='input1' placeholder='Digite Aqui' required={true}/>
   );
 }
 

@@ -2,6 +2,23 @@
   text-align: center;
 }
 
+.input1{
+  background-color: white;
+}
+
+.error_message{
+  font-size: small;
+  color: red;
+}
+
+.componentString{
+  max-width: 20%;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
