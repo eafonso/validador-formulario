@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css'
 import validacaoCPF from '../functions/validarCPF';
-import verificarNumerosRepetidos from '../functions/verificarNumerosRepetidos';
+import verificarNumerosRepetidosCPF from '../functions/verificarNumerosRepetidosCPF';
 
 function ValidadeCPF(props:any) {
   const [invalido, setInvalido] = useState(false);
@@ -12,14 +12,12 @@ function ValidadeCPF(props:any) {
         if(cpf.length !== 11){
             setInvalido(true);
             setMensagemError('Verificar tamanho do CPF!')
-        }else if(verificarNumerosRepetidos(cpf) || !validacaoCPF(cpf)){
+        }else if(verificarNumerosRepetidosCPF(cpf) || !validacaoCPF(cpf)){
             setInvalido(true);
             setMensagemError('CPF INVALIDO!')
         }else{
             setInvalido(false);
         }
-    }else{
-      alert('Ficou como falso')
     }
   }
   return (

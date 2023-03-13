@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../App.css'
 
 function ValidateString(props:any) {
-  const [validado, setValidado] = useState(false);
+  const [invalido, setInvalido] = useState(false);
   const [mensagemError, setMensagemError] = useState('');
   function validating(event:any){
     const tamanho = event.value.length;
@@ -10,16 +10,16 @@ function ValidateString(props:any) {
     const max = props.max || 0;
     if(props.required === true){
       if(tamanho === 0){
-        setValidado(true);
+        setInvalido(true);
         setMensagemError('O campo é obrigatorio!');
       }else if(tamanho < min){
-        setValidado(true);
+        setInvalido(true);
         setMensagemError('Tamanho minimo não atingido!');
       }else if(max !== 0 && tamanho > max){
-        setValidado(true);
+        setInvalido(true);
         setMensagemError('Tamanho máximo ultrapassado!');
       }else{
-        setValidado(false)
+        setInvalido(false)
       }
     }else{
       alert('Ficou como falso')
@@ -35,7 +35,7 @@ function ValidateString(props:any) {
       onChange={e => validating(e.target)}
       onBlur={e => validating(e.target)}
       />
-      {validado && <span className='error_message'>{mensagemError}</span>}
+      {invalido && <span className='error_message'>{mensagemError}</span>}
     </div>
   );
 }
